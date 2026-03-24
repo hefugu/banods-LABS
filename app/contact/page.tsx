@@ -1,6 +1,6 @@
 import PageHero from "@/components/page-hero";
 import Section from "@/components/section";
-
+/*現在フォームを入力して、連絡することはできない*/
 export default function ContactPage() {
   return (
     <>
