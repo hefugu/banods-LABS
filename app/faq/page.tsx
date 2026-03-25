@@ -33,7 +33,7 @@ export default function FaqPage() {
     <>
       <PageHero
         title="FAQ"
-        description="問い合わせ前に出やすい疑問を先に潰します。ここを作っておくと無駄な往復が減ります。"
+        description=""
       />
 
       <Section title="よくある質問">

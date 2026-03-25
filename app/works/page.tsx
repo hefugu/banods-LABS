@@ -7,13 +7,11 @@ export default function WorksPage() {
     <>
       <PageHero
         title="実績"
-        description="公開可能な範囲で掲載しています。案件によっては匿名または概要のみの掲載です。空欄の実績ページは信用を落とすので、最初から仮でも埋めます。"
+        description=""
       />
 
       <Section
-        title="事例"
-        subtitle="作ったものではなく、何を改善したかで見せたほうが強いです。"
-      >
+        title="事例">
         <div className="grid-3">
           <InfoCard
             badge="Community"

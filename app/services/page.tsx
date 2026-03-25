@@ -7,13 +7,11 @@ export default function ServicesPage() {
     <>
       <PageHero
         title="サービス"
-        description="Discordコミュニティの設計・構築・Bot開発・運営改善を中心に対応します。最初から何でも屋に見せると弱いので、軸はDiscordに固定します。"
+        description=""
       />
 
       <Section
-        title="提供サービス"
-        subtitle="依頼内容が曖昧でも構いません。まず何が課題なのかを整理してから提案します。"
-      >
+        title="提供サービス">
         <div className="grid-2">
           <InfoCard
             badge="01"

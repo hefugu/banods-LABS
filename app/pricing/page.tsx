@@ -6,13 +6,11 @@ export default function PricingPage() {
     <>
       <PageHero
         title="料金"
-        description="価格は目安です。最初から細かく固定しすぎると後で破綻します。今は目安を出しつつ、初回相談・見積もり無料を明記して問い合わせの心理障壁を下げます。"
+        description=""
       />
 
       <Section
-        title="料金目安"
-        subtitle="安売り競争には入らない。ただし、入口のハードルは下げる。価格は後から調整していいが、空欄にはするな。"
-      >
+        title="料金目安">
         <div className="grid-3">
           <div className="card glass">
             <div className="badge">Light</div>
