@@ -37,9 +37,7 @@ export default function ServicesPage() {
       </Section>
 
       <Section
-        title="周辺開発"
-        subtitle="Web制作、アプリ開発、サーバー運用はオプション扱いにします。主役にすると軸がぼけます。"
-      >
+        title="周辺開発">
         <div className="grid-3">
           <InfoCard
             title="LP / 公式サイト"
