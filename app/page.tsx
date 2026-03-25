@@ -80,7 +80,7 @@ export default function HomePage() {
 
       <Section
         title="活動実績"
-        subtitle="実績ページまで見ない人も多い。だからトップにも実績を置く。ここを隠すのは悪手です。"
+        subtitle=""
       >
         <div className="grid-3">
           <InfoCard
@@ -132,7 +132,7 @@ export default function HomePage() {
 
       <Section
         title="対応できること"
-        subtitle="最初はDiscordを軸にする。Webやアプリは補助。ここを曖昧にすると便利屋に見えて弱くなります。"
+        subtitle=""
       >
         <div className="grid-2">
           <InfoCard title="Discordサーバー構築">
