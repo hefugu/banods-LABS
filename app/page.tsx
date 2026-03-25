@@ -109,7 +109,7 @@ export default function HomePage() {
 
       <Section
         title="Banods LABS の強み"
-        subtitle="安いだけの構築代行ではなく、使われるサーバーを作るための設計と自動化を重視します。"
+        subtitle=""
       >
         <div className="grid-3">
           <InfoCard
