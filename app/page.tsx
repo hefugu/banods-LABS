@@ -174,7 +174,7 @@ export default function HomePage() {
       </Section>
 
       <Section
-        title="まずは無料相談からでいい"
+        title="まずは無料相談から!"
         subtitle="要件が固まっていなくても問題ありません。新規構築、既存サーバー改善、Bot相談まで対応します。"
       >
         <CTAButtons
