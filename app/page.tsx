@@ -34,7 +34,7 @@ export default function HomePage() {
                   fontSize: "0.98rem",
                 }}
               >
-                4,000人規模コミュニティでのBot運用経験あり。
+                4,000人規模コミュニティでのBot運用経験。
                 初回相談・見積もり無料。
               </p>
 
@@ -69,8 +69,7 @@ export default function HomePage() {
                 <div className="stat-label">相談しやすさ</div>
                 <div className="stat-value">初回相談・見積もり無料</div>
                 <div className="stat-note">
-                  要件が固まっていない段階でも相談可能。
-                  まずは現状と課題を整理します。
+                  要件が固まっていない段階でも相談可能です。
                 </div>
               </div>
             </div>
@@ -96,7 +95,7 @@ export default function HomePage() {
           <InfoCard
             badge="Development"
             title="Bot設計・調整・自動化"
-            text="既存Botの導入だけでなく、要件に応じたカスタム対応や運営フローの自動化も視野に入れます。"
+            text="既存Botの導入だけでなく、要件に応じたカスタム対応や運営フローの自動化も視野に入ります。"
           />
         </div>
 
