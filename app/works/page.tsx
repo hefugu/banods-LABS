@@ -7,7 +7,7 @@ export default function WorksPage() {
     <>
       <PageHero
         title="実績"
-        description=""
+        description="公開可能な範囲で、対応内容や活動実績を掲載しています。"
       />
 
       <Section

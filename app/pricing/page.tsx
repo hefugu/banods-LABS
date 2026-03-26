@@ -6,7 +6,7 @@ export default function PricingPage() {
     <>
       <PageHero
         title="料金"
-        description=""
+        description="内容や規模に応じた料金の目安を掲載しています。初回相談・見積もりは無料です。"
       />
 
       <Section

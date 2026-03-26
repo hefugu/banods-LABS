@@ -7,7 +7,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         title="サービス"
-        description=""
+        description="Discordサーバー構築、Bot導入・開発、運営改善、継続保守まで対応します。"
       />
 
       <Section
@@ -21,7 +21,7 @@ export default function ServicesPage() {
           <InfoCard
             badge="02"
             title="Bot開発・Bot導入支援"
-            text="既存Botの導入・設定から、要件に合わせたカスタムBot開発まで対応。"
+            text="既存Botの導入・設定から、複数サーバーで利用できる汎用Bot、特定サーバー向けの専用Bot開発まで対応します。"
           />
           <InfoCard
             badge="03"
@@ -53,6 +53,26 @@ export default function ServicesPage() {
           />
         </div>
       </Section>
+
+      <Section
+          title="Bot開発・導入支援の詳細"
+          subtitle="用途に応じて、既存Bot導入、汎用Bot、専用Botを使い分けて提案します。"
+        >
+          <div className="grid-3">
+            <InfoCard
+              title="既存Bot導入・設定"
+              text="認証Bot、ロール自動付与、通知、ログ取得、モデレーション補助など、既存Botの導入と設定に対応します。"
+            />
+            <InfoCard
+              title="汎用Bot"
+              text="複数のサーバーで使い回せる、再利用性の高いBot。共通機能をまとめて導入したい場合に向いています。"
+            />
+            <InfoCard
+              title="専用Bot"
+              text="そのサーバー専用の運営フローや導線に合わせて作るカスタムBot。役職管理、問い合わせ導線、通知処理などに対応します。"
+            />
+          </div>
+        </Section>
     </>
   );
 }
