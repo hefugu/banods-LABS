@@ -16,17 +16,17 @@ export default function WorksPage() {
           <InfoCard
             badge="Community"
             title="4,000人規模コミュニティのBot運用支援"
-            text="Botの管理、設定調整、継続運用サポートを担当。運営フローに合わせた対応を実施。"
+            text="4,000人規模のサーバーでBot運用を行っています。規模のあるコミュニティでの管理・調整経験をもとに、実運用を前提とした提案や改善に対応します。"
           />
           <InfoCard
             badge="Structure"
             title="サーバー構成の見直し"
-            text="既存サーバーのチャンネル、ロール、参加後導線を整理し、運営しやすい形へ再設計。"
+            text="既存サーバーのチャンネル、ロール、参加後導線を整理し、運営しやすい形へ再設計ができます。"
           />
           <InfoCard
             badge="Automation"
             title="カスタム機能の設計・実装"
-            text="手動運用の一部をBot化し、作業負担を削減。"
+            text="手動運用の一部をBot化し、作業負担を削減できます。"
           />
         </div>
       </Section>

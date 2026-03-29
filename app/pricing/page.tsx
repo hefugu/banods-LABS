@@ -48,6 +48,18 @@ export default function PricingPage() {
           </div>
         </div>
 
+        <div style={{ marginTop: 20 }} className="card glass">
+          <div className="badge">Management</div>
+          <h3 className="card-title">運営管理・継続支援</h3>
+          <div className="price">¥10,000〜 / 月</div>
+          <ul className="list">
+            <li>サーバー設定の調整</li>
+            <li>Bot管理・軽微な修正</li>
+            <li>導線改善の提案</li>
+            <li>継続的な運営支援</li>
+          </ul>
+        </div>
+
         <div style={{ marginTop: 28 }} className="card glass">
           <h3 className="card-title">相談・見積もりについて</h3>
           <p className="card-text">
