@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://banods-labs.vercel.app/sitemap.xml
+Sitemap: https://banods-labs.vercel.app/sitemap.xmlg

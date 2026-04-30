@@ -1,28 +1,34 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Banods LABS",
+  title: {
+    default: "Banods LABS | Discord Bot開発・サーバー構築",
+    template: "%s | Banods LABS",
+  },
   description:
-    "Discordコミュニティの設計・構築・Bot開発・運営改善を支援する Banods LABS の公式サイト",
+    "Banods LABSは、Discordサーバー構築、Bot開発、コミュニティ設計、運営改善を支援する制作サービスです。導線設計、権限設計、自動化、管理Bot開発まで対応します。",
+  keywords: [
+    "Discord Bot開発",
+    "Discordサーバー構築",
+    "Discord運営代行",
+    "コミュニティ運営",
+    "Bot制作",
+    "Banods LABS",
+  ],
+  openGraph: {
+    title: "Banods LABS | Discord Bot開発・サーバー構築",
+    description:
+      "Discordサーバー構築、Bot開発、コミュニティ設計、運営改善を支援する制作サービスです。",
+    url: "https://banods-labs.vercel.app/",
+    siteName: "Banods LABS",
+    locale: "ja_JP",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://banods-labs.vercel.app/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="ja">
-      <body>
-        <div className="site-shell">
-          <Header />
-          <main className="main-content">{children}</main>
-          <Footer />
-        </div>
-      </body>
-    </html>
-  );
-}
