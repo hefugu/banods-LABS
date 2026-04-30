@@ -1,4 +1,7 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
@@ -32,3 +35,19 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="ja">
+      <body>
+        <div className="site-shell">
+          <Header />
+          <main className="main-content">{children}</main>
+          <Footer />
+        </div>
+      </body>
+    </html>
+  );
+}

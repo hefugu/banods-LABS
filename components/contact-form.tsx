@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import {
   sendContactEmail,
   type ContactFormState,
@@ -12,6 +12,7 @@ const initialState: ContactFormState = {
 };
 
 export default function ContactForm() {
+  const [formStartedAt] = useState(() => Date.now().toString());
   const [state, formAction, isPending] = useActionState(
     sendContactEmail,
     initialState
@@ -20,6 +21,27 @@ export default function ContactForm() {
   return (
     <div className="card glass">
       <form action={formAction} className="form-grid">
+        <input
+          type="hidden"
+          name="formStartedAt"
+          value={formStartedAt}
+        />
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "-9999px",
+            width: "1px",
+            height: "1px",
+            opacity: 0,
+            pointerEvents: "none",
+          }}
+        />
+
         <div>
           <label className="label" htmlFor="name">
             お名前 / ハンドルネーム
@@ -30,6 +52,8 @@ export default function ContactForm() {
             className="input"
             type="text"
             placeholder="例: Helo"
+            required
+            maxLength={80}
           />
         </div>
 
@@ -43,6 +67,8 @@ export default function ContactForm() {
             className="input"
             type="email"
             placeholder="example@mail.com"
+            required
+            maxLength={254}
           />
         </div>
 
@@ -56,6 +82,8 @@ export default function ContactForm() {
             className="input"
             type="text"
             placeholder="例: 配信者コミュニティ / 企業サポート / オンラインサロン"
+            required
+            maxLength={160}
           />
         </div>
 
@@ -68,6 +96,8 @@ export default function ContactForm() {
             name="content"
             className="textarea"
             placeholder="現在の状況、困っていること、依頼したい内容、希望納期などを書いてください。"
+            required
+            maxLength={5000}
           />
         </div>
 
