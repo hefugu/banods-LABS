@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://banods-labs.vercel.app/sitemap.xml
