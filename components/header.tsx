@@ -3,6 +3,7 @@ import Link from "next/link";
 const navItems = [
   { href: "/", label: "トップ" },
   { href: "/services", label: "サービス" },
+  { href: "/tools", label: "ツール" },
   { href: "/works", label: "実績" },
   { href: "/pricing", label: "料金" },
   { href: "/contact", label: "問い合わせ" },
@@ -16,7 +17,7 @@ export default function Header() {
         <Link href="/" className="brand">
           <span className="brand-name">Banods LABS</span>
           <span className="brand-sub">
-            Discord構築・Bot開発・運営改善
+            Bot・Web・拡張機能・アプリ開発
           </span>
         </Link>
 
