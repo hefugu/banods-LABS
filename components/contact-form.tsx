@@ -138,7 +138,7 @@ export default function ContactForm() {
             name="scale"
             className="input"
             type="text"
-            placeholder="例: Discord 300人 / 1ページLP / 個人利用 / 部活内で利用"
+            placeholder="例: Discord 300人 / 1ページLP / 個人利用 / 企業で利用"
             maxLength={160}
           />
         </div>
@@ -166,7 +166,7 @@ export default function ContactForm() {
             name="deadline"
             className="input"
             type="text"
-            placeholder="例: 2週間以内 / 文化祭まで / 急ぎではない"
+            placeholder="例: 2週間以内 / 大会まで / 急ぎではない"
             maxLength={120}
           />
         </div>
