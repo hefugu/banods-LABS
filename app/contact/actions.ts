@@ -6,9 +6,15 @@ import { Resend } from "resend";
 const MIN_SUBMISSION_MS = 800;
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_SUBMISSIONS = 3;
+
 const MAX_NAME_LENGTH = 80;
 const MAX_EMAIL_LENGTH = 254;
+const MAX_REQUEST_TYPE_LENGTH = 120;
 const MAX_PURPOSE_LENGTH = 160;
+const MAX_SCALE_LENGTH = 160;
+const MAX_BUDGET_LENGTH = 120;
+const MAX_DEADLINE_LENGTH = 120;
+const MAX_REFERENCE_URL_LENGTH = 500;
 const MAX_CONTENT_LENGTH = 5000;
 
 const submissionHistory = new Map<string, number[]>();
@@ -37,7 +43,8 @@ function getSuccessMessage(): ContactFormState {
 function getTemporaryFailureMessage(): ContactFormState {
   return {
     success: false,
-    message: "現在お問い合わせ送信を一時停止しています。時間をおいて再度お試しください。",
+    message:
+      "現在お問い合わせ送信を一時停止しています。時間をおいて再度お試しください。",
   };
 }
 
@@ -45,17 +52,21 @@ function getClientKeyFromForwarded(forwardedFor: string | null): string | null {
   if (!forwardedFor) {
     return null;
   }
+
   const first = forwardedFor.split(",")[0]?.trim();
   return first || null;
 }
 
 async function getClientKey(): Promise<string> {
   const requestHeaders = await headers();
+
   const forwarded = getClientKeyFromForwarded(
     requestHeaders.get("x-forwarded-for")
   );
+
   const realIp = requestHeaders.get("x-real-ip")?.trim() || null;
   const userAgent = requestHeaders.get("user-agent")?.trim() || "unknown";
+
   return `${forwarded ?? realIp ?? "unknown"}:${userAgent}`;
 }
 
@@ -81,9 +92,15 @@ export async function sendContactEmail(
 ): Promise<ContactFormState> {
   const website = getValue(formData, "website");
   const formStartedAt = Number(getValue(formData, "formStartedAt"));
+
   const name = getValue(formData, "name");
   const email = getValue(formData, "email");
+  const requestType = getValue(formData, "requestType");
   const purpose = getValue(formData, "purpose");
+  const scale = getValue(formData, "scale");
+  const budget = getValue(formData, "budget");
+  const deadline = getValue(formData, "deadline");
+  const referenceUrl = getValue(formData, "referenceUrl");
   const content = getValue(formData, "content");
 
   if (website) {
@@ -104,17 +121,22 @@ export async function sendContactEmail(
     };
   }
 
-  if (!name || !email || !purpose || !content) {
+  if (!name || !email || !requestType || !purpose || !content) {
     return {
       success: false,
-      message: "未入力の項目があります。全部埋めてください。",
+      message: "未入力の必須項目があります。必須項目を埋めてください。",
     };
   }
 
   if (
     name.length > MAX_NAME_LENGTH ||
     email.length > MAX_EMAIL_LENGTH ||
+    requestType.length > MAX_REQUEST_TYPE_LENGTH ||
     purpose.length > MAX_PURPOSE_LENGTH ||
+    scale.length > MAX_SCALE_LENGTH ||
+    budget.length > MAX_BUDGET_LENGTH ||
+    deadline.length > MAX_DEADLINE_LENGTH ||
+    referenceUrl.length > MAX_REFERENCE_URL_LENGTH ||
     content.length > MAX_CONTENT_LENGTH
   ) {
     return {
@@ -131,6 +153,7 @@ export async function sendContactEmail(
   }
 
   const clientKey = await getClientKey();
+
   if (isRateLimited(clientKey, Date.now())) {
     return {
       success: false,
@@ -155,15 +178,23 @@ export async function sendContactEmail(
       from: fromEmail,
       to: toEmail,
       replyTo: email,
-      subject: `【Banods LABS 問い合わせ】${purpose} / ${name}`,
+      subject: `【Banods LABS 問い合わせ】${requestType} / ${purpose} / ${name}`,
       text: [
         "Banods LABS の問い合わせフォームから送信されました。",
         "",
+        "【基本情報】",
         `名前: ${name}`,
-        `連絡先: ${email}`,
-        `用途: ${purpose}`,
+        `連絡先メールアドレス: ${email}`,
+        `相談種別: ${requestType}`,
+        `用途・目的: ${purpose}`,
         "",
-        "相談内容:",
+        "【任意項目】",
+        `規模・利用人数など: ${scale || "未入力"}`,
+        `希望予算: ${budget || "未入力"}`,
+        `希望納期: ${deadline || "未入力"}`,
+        `参考URL・Discord招待URL: ${referenceUrl || "未入力"}`,
+        "",
+        "【相談内容】",
         content,
       ].join("\n"),
     });
